@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+
+<p>lessons</p>
+<h4>{{lessons.slug}}</h4>
+<h4>{{lessons.subject.standard.slug}}</h4>
+<h4>{{lessons.subject.slug }} </h4>
+
+<h3> {{ lessons.name }} </h3> 
+<p>Created by <i>{{ lessons.created_by}} </i> at  {{lessons.created_at}}</p>
+
+
+<a href="{% url 'carriculum:lesson_update' standard=lessons.subject.standard.slug subject=lessons.slug slug=lessons.slug %}"> Update Lesson</a>
+
+
+
+{% endblock %}

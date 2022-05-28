@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+<div class="jumbotron">
+    <h2>Lessons</h2>
+    
+   
+    <ul>
+        {% for lesson in lessons.lessons.all %}
+        <!--   -->
+        <li> <a href="{% url 'carriculum:lesson_details' standard=lessons.standard.slug subject=lessons.slug slug=lesson.slug %}"> {{ lesson.name }}</a></li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'carriculum:create_lesson' standard=lessons.standard.slug  slug=lessons.slug %}"> Create Lesson</a>
+
+   
+</div>
+
+{% endblock %}
